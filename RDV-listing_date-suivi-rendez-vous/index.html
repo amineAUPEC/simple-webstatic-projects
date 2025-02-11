@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suivi des Rendez-vous</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 style="color: green;">Suivi des Rendez-vous 🐱‍👤🐱‍👤🐱‍👤</h1>
+        <form id="appointment-form">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            <label for="label">Libellé:</label>
+            <input type="text" id="label" name="label" placeholder="médecin, coiffure, mariage, restaurant etc." required>
+            <button type="submit">Ajouter</button>
+            <input type="file" id="file-input" accept=".json,.csv,.ics">
+        </form>
+        <div id="calendar-container"></div>
+        <table id="appointments-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Libellé</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="download">
+            <button id="download-json">Télécharger JSON</button>
+            <button id="download-csv">Télécharger CSV</button>
+            <button id="download-ical">Télécharger iCal</button>
+        </div>
+        <div class="sync">
+                <button id="sync-icloud">Synchroniser avec iCloud</button>
+                <button id="sync-outlook">Synchroniser avec Outlook</button>
+                <button id="sync-gmail">Synchroniser avec Gmail</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
