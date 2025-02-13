@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndianTreats - Order Delicious Samosa and Roll 🍴</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            background-image: linear-gradient(to bottom, #ffd7b3, #ffe6cc);
+            color: #fff;
+            padding: 100px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            animation: fadeInDown 1s;
+        }
+        .features {
+            background-color: #f7f7f7;
+            padding: 50px;
+            text-align: center;
+        }
+        .features h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .menu {
+            background-color: #fefefe;
+            padding: 50px;
+            text-align: center;
+        }
+        .menu-item {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .order {
+            background-color: #add8e6;
+            padding: 50px;
+            text-align: center;
+        }
+        .order-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .catering {
+            background-color: #c6efce;
+            padding: 50px;
+            text-align: center;
+        }
+        .catering-form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .halal-cert {
+            background-color: #f5f5dc;
+            padding: 50px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .halal-cert img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#hero">Home 🏠</a>
+        <a href="#features">Features 📈</a>
+        <a href="#menu">Menu 🍴</a>
+        <a href="#order">Order Now! 🛍️</a>
+        <a href="#catering">Catering 🎉</a>
+        <a href="#halal-cert">Halal Certification 📜</a>
+    </nav>
+    <div id="hero" class="hero">
+        <h1>Welcome to IndianTreats! 🎉</h1>
+        <p>Order delicious samosa and roll online at IndianTreats! 🍴</p>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#translateModal">Translate 🌎</button>
+    </div>
+    <div id="features" class="features">
+        <h2>Why Choose Us? 🤔</h2>
+        <ul>
+            <li>Fresh and hygienic food 🥗</li>
+            <li>Best taste in town 👌</li>
+            <li>Affordable prices 💸</li>
+        </ul>
+    </div>
+    <div id="menu" class="menu">
+        <h2>Menu 🍴</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="menu-item">
+                    <img src="https://source.unsplash.com/150x150/?samosa" alt="Samosa">
+                    <h3>Samosa 🥟</h3>
+                    <p>Price: $5 💸</p>
+                    <p>Description: Crunchy pastry filled with spiced potatoes and peas. 🤤</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="menu-item">
+                    <img src="https://source.unsplash.com/150x150/?roll" alt="Roll">
+                    <h3>Roll 🥖</h3>
+                    <p>Price: $6 💸</p>
+                    <p>Description: Soft and fluffy roll filled with spiced chicken or vegetables. 🥗</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="order" class="order">
+        <h2>Order Now! 🛍️</h2>
+        <p>Order your favorite samosa or roll now! 🍴</p>
+        <div class="order-form">
+            <form>
+                <div class="form-group">
+                    <label for="name">Name: 👨</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: 📧</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone: 📞</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="order">Order: 🍴</label>
+                    <select id="order" name="order" required>
+                        <option value="">Select an item 🤔</option>
+                        <option value="samosa">Samosa 🥟 ($5)</option>
+                        <option value="roll">Roll 🥖 ($6)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flavor">Flavor: 🍴</label>
+                    <select id="flavor" name="flavor" required>
+                        <option value="">Select a flavor 🤔</option>
+                        <option value="chicken">Chicken 🍗 ($1 extra)</option>
+                        <option value="beef">Beef 🥩 ($2 extra)</option>
+                        <option value="vegetable">Vegetable 🥗 (no extra charge)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="spicylevel">Spicylevel: 🔥</label>
+                    <select id="spicylevel" name="spicylevel" required>
+                        <option value="">Select a spicylevel 🤔</option>
+                        <option value="high">High 🔥</option>
+                        <option value="low">Low 😊</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity: 📦</label>
+                    <input type="number" id="quantity" name="quantity" required>
+                </div>
+                <button type="button" id="order-now" class="btn btn-primary">Order Now! 🛍️</button>
+            </form>
+        </div>
+    </div>
+    <div id="catering" class="catering">
+        <h2>Catering Services 🎉</h2>
+        <p>We offer catering services for events and parties. Please fill out the form below to inquire about our catering packages. 🎂</p>
+        <div class="catering-form">
+            <form>
+                <div class="form-group">
+                    <label for="catering-name">Name: 👨</label>
+                    <input type="text" id="catering-name" name="catering-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="catering-email">Email: 📧</label>
+                    <input type="email" id="catering-email" name="catering-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="catering-phone">Phone: 📞</label>
+                    <input type="tel" id="catering-phone" name="catering-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="catering-event">Event: 🎉</label>
+                    <input type="text" id="catering-event" name="catering-event" required>
+                </div>
+                <div class="form-group">
+                    <label for="catering-guests">Number of Guests: 👥</label>
+                    <input type="number" id="catering-guests" name="catering-guests" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Inquire About Catering 📲</button>
+            </form>
+        </div>
+        <h3>Catering Packages 🎁</h3>
+        <ul>
+            <li>Package 1: $500 (50 guests) 👥</li>
+            <li>Package 2: $1000 (100 guests) 👥</li>
+            <li>Package 3: $1500 (150 guests) 👥</li>
+        </ul>
+    </div>
+    <div id="halal-cert" class="halal-cert">
+        <h2>Halal Certificate 📜</h2>
+        <p>We are proud to announce that our food is certified Halal by the relevant authorities. 🙏</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#halalModal">View Certificate 📄</button>
+    </div>
+    <div class="footer">
+        <p>&copy; 2023 IndianTreats. All rights reserved. 📝</p>
+        <ul>
+            <li><a href="#" target="_blank">Facebook 👥</a></li>
+            <li><a href="#" target="_blank">Instagram 📸</a></li>
+            <li><a href="#" target="_blank">Twitter 🐦</a></li>
+        </ul>
+    </div>
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Order Confirmation 📝</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="order-detail"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close 👋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="halalModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Halal Certificate 📜</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://source.unsplash.com/800x600/?halal-certificate" alt="Halal Certificate" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close 👋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="translateModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Translate 🌎</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="google_translate_element"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close 👋</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        $(document).ready(function() {
+            $('#order-now').click(function() {
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+                var order = $('#order').val();
+                var flavor = $('#flavor').val();
+                var spicylevel = $('#spicylevel').val();
+                var quantity = parseInt($('#quantity').val());
+                var price = 0;
+                if (order == 'samosa') {
+                    price = 5 * quantity;
+                } else if (order == 'roll') {
+                    price = 6 * quantity;
+                }
+                if (flavor == 'chicken') {
+                    price += quantity;
+                } else if (flavor == 'beef') {
+                    price += 2 * quantity;
+                }
+                var body = 'Name: ' + name + '\nEmail: ' + email + '\nPhone: ' + phone + '\nOrder: ' + order + '\nFlavor: ' + flavor + '\nSpicylevel: ' + spicylevel + '\nQuantity: ' + quantity + '\nTotal Price: $' + price;
+                $('#order-detail').html(body);
+                var mailTo = 'mailto:shop-mine-94@outlook.fr?subject=Order&body=' + encodeURIComponent(body);
+                window.location.href = mailTo;
+                $('#myModal').modal('show');
+            });
+        });
+    </script>
+</body>
+</html>

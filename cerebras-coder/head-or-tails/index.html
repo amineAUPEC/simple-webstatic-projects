@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8eL8cytqmFBpEYWaddvZePTAHDe6Zl5EGQT0N2hkYgvlYvBRtxO/Fk6yT5thASRzVhm6TNVkEA5QjYdwAA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Heads or Tails Game</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .game-container {
+            width: 80%;
+            margin: 40px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: all 0.5s;
+        }
+        .game-container:hover {
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+        .result {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        #reset {
+            display: none;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode .game-container {
+            background-color: #444;
+            border-color: #555;
+        }
+        .coin {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 20px auto;
+            transition: transform 0.5s;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .head {
+            background-image: linear-gradient(to bottom, #ffd700, #ffa500);
+            background-size: cover;
+            box-shadow: 0 0 10px rgba(255,215,0,0.5);
+        }
+        .tail {
+            background-image: linear-gradient(to bottom, #add8e6, #87ceeb);
+            background-size: cover;
+            box-shadow: 0 0 10px rgba(173,216,230,0.5);
+        }
+        .btn {
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        #theme-toggle {
+            background-color: #6200ee;
+            color: #fff;
+            border: none;
+        }
+        #theme-toggle:hover {
+            background-color: #4c0099;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>Heads or Tails Game</h2>
+        <p id="turn" class="fw-bold fs-5 mb-3">Turn: 1</p>
+        <p id="result" class="result"></p>
+        <button id="play" class="btn btn-primary">Play</button>
+        <button id="reset" class="btn btn-secondary">Reset</button>
+        <button id="theme-toggle" class="btn">Toggle Theme</button>
+        <div id="coin" class="coin head mt-4"></div>
+        <div class="d-flex justify-content-center mt-4">
+            <i class="fas fa-spinner fa-spin" id="loader" style="display: none; font-size: 24px;"></i>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+        const playButton = document.getElementById('play');
+        const resetButton = document.getElementById('reset');
+        const turnElement = document.getElementById('turn');
+        const resultElement = document.getElementById('result');
+        const themeToggleButton = document.getElementById('theme-toggle');
+        const coinElement = document.getElementById('coin');
+        const loaderElement = document.getElementById('loader');
+        const predefinedValues = ['head', 'head', 'tails', 'tails'];
+        let turn = 0;
+        let isDarkMode = false;
+        let isThemeInverted = false;
+
+        playButton.addEventListener('click', () => {
+            loaderElement.style.display = 'block';
+            turn++;
+            turnElement.textContent = `Turn: ${turn}`;
+            let currentValue = predefinedValues[(turn - 1) % predefinedValues.length];
+            if (isThemeInverted) {
+                currentValue = currentValue === 'head' ? 'tails' : 'head';
+            }
+            resultElement.textContent = `You got ${currentValue}!`;
+            if (currentValue === 'head') {
+                coinElement.classList.remove('tail');
+                coinElement.classList.add('head');
+            } else {
+                coinElement.classList.remove('head');
+                coinElement.classList.add('tail');
+            }
+            coinElement.style.transform = 'rotateY(360deg)';
+            setTimeout(() => {
+                coinElement.style.transform = 'rotateY(0deg)';
+                loaderElement.style.display = 'none';
+            }, 500);
+        });
+
+        resetButton.addEventListener('click', () => {
+            turn = 0;
+            turnElement.textContent = `Turn: ${turn + 1}`;
+            resultElement.textContent = '';
+            coinElement.classList.remove('tail');
+            coinElement.classList.add('head');
+        });
+
+        themeToggleButton.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            isThemeInverted = !isThemeInverted;
+        });
+    </script>
+</body>
+</html>
