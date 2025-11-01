@@ -9,3 +9,4 @@ Some simple webstatic projects
     * [head-or-tails](./cerebras-coder/head-or-tails/index.html) -- finished
     * [cerebras-code-mosaic](./cerebras-coder/cerebras-code-mosaic/index.html)
     * [version-cerebras-mosaic-iframe](./cerebras-coder/cerebras-code-mosaic/version-cerebras-mosaic-iframe/index.html)
+    * [edenred-stats](./edenred_stats/edenred-stats-csv-v2.html)
